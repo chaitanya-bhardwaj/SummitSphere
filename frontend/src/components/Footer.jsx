@@ -40,7 +40,7 @@ const Footer = () => (
 
           <div style={{ display: 'flex', gap: '10px' }}>
             <a
-              href="https://github.com/Chaitanya-970"
+              href="https://github.com/chaitanya-bhardwaj"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"

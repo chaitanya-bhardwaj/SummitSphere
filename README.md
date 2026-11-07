@@ -89,7 +89,7 @@ summitsphere/
 
 ```bash
 # Clone
-git clone https://github.com/Chaitanya-970/summitsphere.git
+git clone https://github.com/chaitanya-bhardwaj/summitsphere.git
 cd summitsphere
 
 # Install backend dependencies
@@ -174,7 +174,7 @@ node seed.js --force
 
 **Chaitanya Bhardwaj**
 
-[GitHub](https://github.com/Chaitanya-970) · [LinkedIn](https://www.linkedin.com/in/chaitanya-bhardwaj-1a1a81372/)
+[GitHub](https://github.com/chaitanya-bhardwaj) · [LinkedIn](https://www.linkedin.com/in/chaitanya-bhardwaj-1a1a81372/)
 
 ---
 
