@@ -168,6 +168,33 @@ node seed.js --force
 - Add all environment variables from `.env` in the Render dashboard
 - Set `FRONTEND_URL` to your Vercel deployment URL
 
+### Demo health check
+
+`GET /health` returns HTTP 200 with `{"status":"ok"}` when MongoDB's
+connection is ready, or HTTP 503 with `{"status":"unavailable"}` otherwise.
+It sends `Cache-Control: no-store`, exposes no connection details, and checks
+connection state without running a database query. The server still waits for
+its initial database connection before listening.
+
+Run the endpoint's HTTP integration test with:
+
+```bash
+cd backend
+node --test test/health.test.js
+```
+
+For this demo, an external cron-job.org job can request
+`https://summitsphere-manipal.onrender.com/health` every five minutes using GET.
+Configure the job in cron-job.org; no GitHub Actions schedule is used.
+Keep API keys outside the repository. Verify actual HTTP 200 executions in the
+scheduler's history after setup; committing this endpoint alone creates no job.
+
+Render Free services sleep after 15 idle minutes. Regular requests can reduce
+cold starts, but do not guarantee uptime or prevent platform restarts. Keeping
+a service running consumes the workspace's shared 750 monthly free instance
+hours. See [Render's free-service limits](https://render.com/docs/free).
+To stop the heartbeat, disable the job in cron-job.org.
+
 ---
 
 ## Author

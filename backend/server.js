@@ -14,7 +14,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.use('/health', require('./routes/healthRoutes')(mongoose.connection));
 
 app.use('/api/user', userRoutes);
 app.use('/api/treks', trekRoutes);
